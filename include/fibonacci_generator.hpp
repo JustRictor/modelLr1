@@ -1,10 +1,13 @@
 #ifndef __FIBONACCI_GENERATOR_HPP_
 #define __FIBONACCI_GENERATOR_HPP_
 
-#include "congurent_generator.hpp"
+
 #include <vector>
 #include <algorithm>
 #include <cstdint>
+
+#include "congurent_generator.hpp"
+#include "constexpr_pow.hpp"
 
 namespace randGen
 {
@@ -27,6 +30,6 @@ public:
 
 
 
-}
+}//namespace randGen
 
 #endif//__FIBONACCI_GENERATOR_HPP_

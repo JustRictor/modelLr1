@@ -27,6 +27,6 @@ public:
 
 
 
-}//randGen
+}//namespace randGen
 
 #endif//__CONGURENT_GENERATOR_HPP_
