@@ -7,10 +7,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SOURCES
         src/congurent_generator.cpp
+        src/fibonacci_generator.cpp
         src/main.cpp
     )
 set(HEADERS
         include/constexpr_pow.hpp
+        include/fibonacci_generator.hpp
         include/congurent_generator.hpp
     )
 
