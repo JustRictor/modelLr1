@@ -2,8 +2,7 @@
 #define __MERSENNE_TWISTER_HPP_
 
 #include <random>
-
-#include "constexpr_pow.hpp"
+#include <cmath>
 
 namespace randGen
 {
@@ -16,7 +15,7 @@ private:
     std::mt19937 generator;
     std::uniform_real_distribution<double> distr;
 public:
-    explicit Mersenne(double seed = cpow(2.,-52));
+    explicit Mersenne(double seed = std::pow(2.,-52));
     double rand();
 };
 

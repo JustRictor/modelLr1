@@ -7,7 +7,6 @@
 #include <cstdint>
 
 #include "congurent_generator.hpp"
-#include "constexpr_pow.hpp"
 
 namespace randGen
 {
@@ -24,7 +23,6 @@ private:
 public:
     explicit Fibonacci(double seed = std::pow(2.,-52),
                        size_t a = 63, size_t b = 31);
-    void srand(double seed);
     double rand();
 };
 
