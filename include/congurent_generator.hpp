@@ -1,6 +1,8 @@
 #ifndef __CONGURENT_GENERATOR_HPP_
 #define __CONGURENT_GENERATOR_HPP_
 
+#include "generator_interface.hpp"
+
 #include <cmath>
 #include <cstdint>
 
@@ -9,7 +11,7 @@ namespace randGen
 
 
 
-class Congurent
+class Congurent : public Generator
 {
 private:
     const uint16_t A_;
@@ -19,9 +21,8 @@ private:
 public:
     explicit Congurent(double seed = std::pow(2.,-52),
                        uint16_t A = std::pow(7,5), uint16_t C = 0);
-    void srand(double seed);
-    double rand();
-
+    double rand() override;
+    GeneratorType getType() override;
 
 };
 

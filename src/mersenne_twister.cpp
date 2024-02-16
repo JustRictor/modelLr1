@@ -9,3 +9,8 @@ double randGen::Mersenne::rand()
 {
     return distr(generator);
 }
+
+randGen::GeneratorType randGen::Mersenne::getType()
+{
+    return GeneratorType::Mersenne;
+}

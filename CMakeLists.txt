@@ -5,16 +5,18 @@ project(randomNumGen LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(HEADERS_GEN
+        include/myrandom.hpp
+        include/generator_interface.hpp
+        include/fibonacci_generator.hpp
+        include/congurent_generator.hpp
+        include/mersenne_twister.hpp
+    )
+
 set(SOURCES_GEN
         src/congurent_generator.cpp
         src/fibonacci_generator.cpp
         src/mersenne_twister.cpp
-    )
-
-set(HEADERS_GEN
-        include/fibonacci_generator.hpp
-        include/congurent_generator.hpp
-        include/mersenne_twister.hpp
     )
 
 add_library(randomgenlib ${HEADERS_GEN} ${SOURCES_GEN})

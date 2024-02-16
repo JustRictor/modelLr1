@@ -11,12 +11,6 @@ randGen::Fibonacci::Fibonacci(double seed, size_t a, size_t b)
         R = initGen.rand();
 }
 
-void randGen::Fibonacci::srand(double seed)
-{
-    for(auto& R : R_arr)
-        R = initGen.rand();
-}
-
 double randGen::Fibonacci::rand()
 {
     for(size_t i = R_arr.size() - 1; i > 0; i--)
@@ -25,4 +19,9 @@ double randGen::Fibonacci::rand()
     if(R_arr[a_] < R_arr[b_])
         R_++;
     return R_;
+}
+
+randGen::GeneratorType randGen::Fibonacci::getType()
+{
+    return GeneratorType::Fibonacci;
 }
