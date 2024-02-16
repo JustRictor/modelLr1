@@ -9,12 +9,14 @@ set(SOURCES
         src/congurent_generator.cpp
         src/fibonacci_generator.cpp
         src/mersenne_twister.cpp
+        src/metrics.cpp
         src/main.cpp
     )
 set(HEADERS
         include/constexpr_pow.hpp
         include/fibonacci_generator.hpp
         include/congurent_generator.hpp
+        include/metrics.hpp
         include/mersenne_twister.hpp
     )
 

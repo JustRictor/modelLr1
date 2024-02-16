@@ -16,14 +16,8 @@ private:
     std::mt19937 generator;
     std::uniform_real_distribution<double> distr;
 public:
-    explicit Mersenne(double seed = cpow(2.,-52))
-        : generator(seed)
-        , distr(0.,1.)
-    {}
-    double rand()
-    {
-        return distr(generator);
-    }
+    explicit Mersenne(double seed = cpow(2.,-52));
+    double rand();
 };
 
 

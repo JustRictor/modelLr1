@@ -1,7 +1,10 @@
 #include "congurent_generator.hpp"
 
-randGen::Congurent::Congurent(double seed)
-    : R_(seed)
+randGen::Congurent::Congurent(double seed,
+                              uint16_t A, uint16_t C)
+    : A_(A)
+    , C_(C)
+    , R_(seed)
 {
 
 }

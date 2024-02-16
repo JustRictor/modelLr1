@@ -11,11 +11,8 @@ randGen::Fibonacci::Fibonacci(double seed, size_t a, size_t b)
         R = initGen.rand();
 }
 
-void randGen::Fibonacci::srand(double seed, size_t a, size_t b)
+void randGen::Fibonacci::srand(double seed)
 {
-    a_ = a;
-    b_ = b;
-    R_arr.reserve(std::max(a_,b_) + 1);
     for(auto& R : R_arr)
         R = initGen.rand();
 }
