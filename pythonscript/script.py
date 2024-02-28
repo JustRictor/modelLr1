@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
 from copy import deepcopy
 
 def printFoo(arr: list[list[float]]) -> None:
@@ -59,9 +60,9 @@ def kde(arr: list[list[float]])->None:
     plt.show()
 
 
-def main() -> None:
+def main(filePath: str) -> None:
     arr = []
-    with open('out.csv') as file:
+    with open(filePath) as file:
         samp = [i.split(', ')[:-1] for i in file.read().splitlines()]
         for line in samp:
             arr.append([float(i) for i in line])
@@ -70,4 +71,6 @@ def main() -> None:
     kde(arr)
     
 if __name__ == "__main__":
-    main()
+    if (len(sys.argv) < 2):
+        sys.exit("ERROR filepath is undefinded")
+    main(sys.argv[1])

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <unordered_map>
 #include <algorithm>
+#include <cstdlib>
 
 #include "metrics.hpp"
 #include "myrandom.hpp"
@@ -12,8 +13,9 @@ void printMetrics(std::ostream& stream, randGen::Generator* gen);
 std::string getMetrics(std::vector<double> const& arr);
 std::vector<double> genArray(randGen::Generator* gen, size_t size);
 
-int main()
+int main(int argc, char* argv[])
 {
+    if(argc != 1) return -1;
     randGen::Congurent congurent;
     randGen::Fibonacci fibonacci;
     randGen::Mersenne  mersenne;
@@ -22,7 +24,11 @@ int main()
     printMetrics(std::cout,&fibonacci);
     printMetrics(std::cout,&mersenne);
 
-    std::ofstream file("out.csv");
+    std::string filePath = argv[0];
+    filePath = filePath.substr(0,filePath.size() - 4)
+            + std::string("out.csv");
+
+    std::ofstream file(filePath);
     file.precision(48);
     for(size_t i : {1'000,5'000,10'000})
         toFile( file, genArray(&congurent,i) );
@@ -30,6 +36,10 @@ int main()
         toFile( file, genArray(&fibonacci,i) );
     for(size_t i : {1'000,5'000,10'000})
         toFile( file, genArray(&mersenne,i) );
+    file.close();
+
+    std::string sysCall = std::string("python3 script.py ") + filePath;
+    std::system(sysCall.c_str());
     return 0;
 }
 
